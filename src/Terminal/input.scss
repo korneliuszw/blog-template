@@ -1,0 +1,26 @@
+@import '../_variables';
+
+.terminal-input {
+    display: flex;
+    flex-direction: row;
+    form {
+        display: flex;
+        flex-direction: row;
+    }
+    .input-submit {
+        display: none;
+    }
+    .input-prefix {
+        color: $text-emp;
+        font: 200% $font-stack;
+    }
+    .input-text {
+        --webkit-appearance: none;
+        outline: none;
+        width: auto;
+        color: $text-normal;
+        background: $background;
+        border: none;
+        font: 200% $font-stack;
+    }
+}

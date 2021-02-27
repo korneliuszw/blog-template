@@ -1,0 +1,21 @@
+@import '../_variables.scss';
+
+.terminal {
+    height: 100%;
+    border-style: solid;
+    border-width: medium;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border-color: $border;
+    .history-item {
+        font: 200% $font-stack;
+        color: $text-normal;
+    }
+    overflow: scroll;
+    scrollbar-width: none;
+}
+.terminal::-webkit-scrollbar {
+    display: none;
+}

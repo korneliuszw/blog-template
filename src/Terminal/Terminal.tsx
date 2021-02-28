@@ -24,7 +24,7 @@ class Terminal extends React.Component<ITerminalProps, ITerminalState> {
           <div className="terminal">
               {this.state.history.map((historyElement, i) => {
                   return (
-                      <div key={i} className="history-item">{historyElement} </div>
+                      <div key={i} className="history-item">{historyElement.split('\n').map(str => <p> {str} </p>)} </div>
                   )
               })}
               <Input onSubmit={this.onCommandSubmit} disabled={this.state.processingCommand} />
@@ -44,6 +44,7 @@ class Terminal extends React.Component<ITerminalProps, ITerminalState> {
         setTimeout(() => {
             const result = match(command);
             this.state.history.push(HISTORY_PREFIX + command);
+            console.log(result)
             if (!result) {
                 this.state.history.push('Command not found! See help for info');
             } else {
@@ -56,5 +57,5 @@ class Terminal extends React.Component<ITerminalProps, ITerminalState> {
         }, 200)
     }
 }
-
+export const TERMINAL_PANE_ID = "TERMINAL";
 export default Terminal;

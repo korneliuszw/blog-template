@@ -6,13 +6,13 @@ import './index.scss';
 import reportWebVitals from './reportWebVitals';
 import rootReducer from './root.reducer';
 import Terminal from './Terminal/Terminal';
-
+import Panes from './Panes/Panes'
 const store = createStore(rootReducer);
 
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
-            <Terminal />
+            <Panes/>
         </Provider>
   </React.StrictMode>,
   document.getElementById('root')
@@ -22,3 +22,5 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+export {store};
